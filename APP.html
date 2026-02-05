@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Indian Courtroom AI – Practice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: Arial; background:#0f172a; color:white; padding:20px; }
+    textarea, select, button {
+      width:100%; padding:10px; margin-top:10px; border-radius:6px; border:none;
+    }
+    button { background:#2563eb; color:white; font-weight:bold; cursor:pointer; }
+    #response { margin-top:20px; white-space:pre-wrap; background:#1e293b; padding:15px; border-radius:8px;}
+  </style>
+</head>
+<body>
+
+<h2>Indian Courtroom AI – Argument Practice</h2>
+
+<label>Select Mode</label>
+<select id="mode">
+  <option>Judge Questions</option>
+  <option>Opponent Arguments</option>
+  <option>Improve My Argument</option>
+</select>
+
+<label>Enter Your Case / Argument</label>
+<textarea id="input" rows="8" placeholder="Type your case facts or argument here..."></textarea>
+
+<button onclick="generate()">Generate</button>
+
+<div id="response"></div>
+
+<script>
+async function generate() {
+  const mode = document.getElementById("mode").value;
+  const input = document.getElementById("input").value;
+
+  const prompt = `You are an Indian court judge and senior advocate.
+Mode: ${mode}
+Case/Argument: ${input}
+Respond accordingly based on Indian law and courtroom practice.`;
+
+  document.getElementById("response").innerText = "Generating...";
+
+  // Placeholder response (AI integration comes next)
+  setTimeout(() => {
+    document.getElementById("response").innerText =
+      "AI response will appear here after we connect the model.";
+  }, 1000);
+}
+</script>
+
+</body>
+</html>
